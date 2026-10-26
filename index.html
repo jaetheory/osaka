@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0d0d0f">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Hokkaido Golf &amp; Onsen · 8.25–8.30</title>
+<meta name="description" content="Toya · Rusutsu · Niseko — 5 nights of golf, onsen and kaiseki. Aug 25–30.">
+<meta property="og:title" content="Hokkaido Golf &amp; Onsen · 8.25–8.30">
+<meta property="og:description" content="Toya · Rusutsu · Niseko — 5 nights of golf, onsen and kaiseki.">
+<style>
+  :root{
+    --bg:#0d0d0f; --bg2:#141417; --card:#1a1a1e; --card2:#212126;
+    --line:#2c2b2f; --line2:#3a3730;
+    --gold:#c9a55c; --gold2:#e6cf97; --gold-dim:#8a7444;
+    --ink:#f2ede3; --ink2:#bdb6a8; --ink3:#8a847a;
+    --golf:#6f9a78; --onsen:#c98a6e; --food:#c9a55c; --move:#7d93b8; --rest:#a68cc4;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html{scroll-behavior:smooth;}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI","Noto Sans KR","Noto Sans JP",sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;padding-bottom:calc(40px + env(safe-area-inset-bottom));overflow-x:hidden;}
+  button{font-family:inherit;}
+  a{color:inherit;}
+  .wrap{max-width:640px;margin:0 auto;}
+  .serif{font-family:"Times New Roman","Noto Serif KR","Noto Serif JP",serif;}
+
+  header{position:relative;overflow:hidden;padding:34px 22px 26px;padding-top:calc(34px + env(safe-area-inset-top));background:radial-gradient(120% 90% at 100% 0%,rgba(201,165,92,.20),transparent 60%),linear-gradient(180deg,#121214 0%,var(--bg) 100%);border-bottom:1px solid var(--line);}
+  header::before{content:"";position:absolute;left:22px;right:22px;top:calc(18px + env(safe-area-inset-top));height:1px;background:linear-gradient(90deg,var(--gold-dim),transparent);}
+  .eyebrow{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);font-weight:600;}
+  header h1{font-size:30px;font-weight:600;line-height:1.2;margin:10px 0 6px;letter-spacing:-.2px;color:var(--ink);}
+  header h1 em{font-style:italic;color:var(--gold2);}
+  header .sub{font-size:14px;color:var(--ink2);}
+  .hbar{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:20px;}
+  .hbar div{background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:12px;padding:10px 10px 9px;}
+  .hbar small{display:block;font-size:10px;letter-spacing:1.5px;color:var(--ink3);text-transform:uppercase;font-weight:600;}
+  .hbar b{display:block;font-size:14px;color:var(--gold2);font-weight:600;margin-top:2px;}
+
+  .navwrap{position:sticky;top:0;z-index:50;background:rgba(13,13,15,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line);}
+  nav{display:flex;overflow-x:auto;scrollbar-width:none;padding:0 6px;}
+  nav::-webkit-scrollbar{display:none;}
+  .tab{flex:1 0 auto;min-width:58px;padding:11px 8px 12px;background:none;border:none;cursor:pointer;color:var(--ink3);position:relative;text-align:center;transition:color .2s;}
+  .tab b{display:block;font-size:13px;font-weight:700;letter-spacing:.3px;}
+  .tab span{display:block;font-size:10.5px;font-weight:600;margin-top:1px;}
+  .tab.active{color:var(--gold2);}
+  .tab.active::after{content:"";position:absolute;left:12px;right:12px;bottom:0;height:2px;background:var(--gold);border-radius:2px;}
+
+  main{padding:22px 16px;}
+  .panel{display:none;animation:fade .35s ease;}
+  .panel.active{display:block;}
+  @keyframes fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+
+  .dayhead{margin-bottom:16px;}
+  .dayhead .date{font-size:11.5px;letter-spacing:3px;color:var(--gold);font-weight:600;text-transform:uppercase;}
+  .dayhead h2{font-size:23px;font-weight:600;margin-top:4px;line-height:1.3;}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;}
+  .chip{font-size:11.5px;font-weight:700;padding:3px 10px;border-radius:20px;border:1px solid;letter-spacing:.2px;}
+  .chip.golf{color:var(--golf);border-color:rgba(111,154,120,.45);background:rgba(111,154,120,.08);}
+  .chip.onsen{color:var(--onsen);border-color:rgba(201,138,110,.45);background:rgba(201,138,110,.08);}
+  .chip.food{color:var(--food);border-color:rgba(201,165,92,.45);background:rgba(201,165,92,.08);}
+  .chip.move{color:var(--move);border-color:rgba(125,147,184,.45);background:rgba(125,147,184,.08);}
+  .chip.rest{color:var(--rest);border-color:rgba(166,140,196,.45);background:rgba(166,140,196,.08);}
+
+  .summary{background:linear-gradient(160deg,#1d1b17,#16161a);border:1px solid var(--line2);border-radius:16px;padding:6px 16px;margin-bottom:18px;}
+  .row{display:flex;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);font-size:13.5px;}
+  .row:last-child{border-bottom:none;}
+  .row .k{flex:0 0 52px;color:var(--gold);font-weight:700;font-size:12px;letter-spacing:.5px;padding-top:1px;}
+  .row .v{flex:1;color:var(--ink);}
+  .row .v small{display:block;color:var(--ink3);font-size:12px;margin-top:1px;}
+
+  .sec{font-size:11px;letter-spacing:3px;color:var(--ink3);font-weight:700;text-transform:uppercase;margin:4px 2px 10px;display:flex;align-items:center;gap:10px;}
+  .sec::after{content:"";flex:1;height:1px;background:var(--line);}
+
+  .tl{position:relative;padding-left:18px;}
+  .tl::before{content:"";position:absolute;left:5px;top:6px;bottom:6px;width:1px;background:linear-gradient(180deg,var(--gold-dim),var(--line));}
+  .item{position:relative;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 15px;margin-bottom:11px;}
+  .item::before{content:"";position:absolute;left:-17px;top:19px;width:9px;height:9px;border-radius:50%;background:var(--bg);border:2px solid var(--gold);}
+  .item .time{font-size:11.5px;font-weight:700;color:var(--gold);letter-spacing:1px;text-transform:uppercase;}
+  .item h3{font-size:15.5px;font-weight:700;margin:3px 0 4px;}
+  .item p{font-size:13.5px;color:var(--ink2);}
+  .item .jp{font-size:12px;color:var(--ink3);margin-top:2px;}
+  .item.opt{border-style:dashed;}
+  .item.opt::before{border-style:dashed;}
+  .opt-tag{display:inline-block;font-size:10.5px;font-weight:700;color:var(--rest);border:1px solid rgba(166,140,196,.45);padding:1px 7px;border-radius:6px;margin-left:6px;vertical-align:2px;}
+
+  .route{position:relative;background:linear-gradient(160deg,#1a1d24,#16171b);border:1px solid #2c3240;border-radius:14px;padding:14px 15px;margin-bottom:11px;}
+  .route::before{content:"";position:absolute;left:-17px;top:19px;width:9px;height:9px;border-radius:2px;background:var(--move);transform:rotate(45deg);}
+  .route .time{font-size:11.5px;font-weight:700;color:var(--move);letter-spacing:1px;text-transform:uppercase;}
+  .leg{display:flex;flex-direction:column;gap:2px;margin:8px 0 10px;}
+  .leg .pt{display:flex;gap:9px;align-items:flex-start;font-size:13.5px;}
+  .leg .pt i{flex:0 0 auto;font-style:normal;font-size:10px;font-weight:800;width:18px;height:18px;border-radius:50%;display:grid;place-items:center;margin-top:2px;}
+  .leg .pt.a i{background:transparent;border:1.5px solid var(--move);color:var(--move);}
+  .leg .pt.b i{background:var(--gold);color:#1a1408;}
+  .leg .pt div b{font-weight:700;color:var(--ink);}
+  .leg .pt div small{display:block;font-size:11.5px;color:var(--ink3);}
+  .leg .dots{margin-left:8px;height:12px;border-left:1.5px dotted var(--ink3);}
+  .eta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;}
+  .eta span{font-size:12.5px;font-weight:700;color:var(--ink);background:rgba(125,147,184,.12);border:1px solid rgba(125,147,184,.3);padding:4px 10px;border-radius:8px;}
+  .eta span.d{color:var(--ink2);font-weight:600;}
+  .btns{display:flex;gap:8px;flex-wrap:wrap;}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;font-size:13px;font-weight:700;text-decoration:none;padding:10px 14px;border-radius:10px;border:1px solid var(--gold);cursor:pointer;transition:transform .1s, background .2s;}
+  .btn:active{transform:scale(.98);}
+  .btn.primary{flex:1 1 auto;background:linear-gradient(180deg,var(--gold2),var(--gold));color:#1a1408;}
+  .btn.ghost{background:transparent;color:var(--gold2);border-color:var(--line2);}
+  .btn svg{width:15px;height:15px;}
+  .pin{display:inline-flex;align-items:center;gap:5px;margin-top:10px;font-size:12.5px;font-weight:600;color:var(--gold2);text-decoration:none;background:rgba(201,165,92,.08);border:1px solid rgba(201,165,92,.25);padding:6px 11px;border-radius:9px;}
+
+  .note{font-size:12px;color:var(--ink3);padding:12px 4px 0;line-height:1.55;}
+  footer{text-align:center;color:var(--ink3);font-size:11.5px;padding:24px 16px 0;letter-spacing:.5px;}
+  footer b{color:var(--gold-dim);font-weight:600;}
+  #toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom));transform:translateX(-50%) translateY(20px);background:var(--card2);color:var(--ink);border:1px solid var(--gold-dim);font-size:13px;padding:9px 16px;border-radius:20px;opacity:0;pointer-events:none;transition:all .25s;z-index:100;max-width:90vw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  #toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+  @media (min-width:600px){ header h1{font-size:36px;} main{padding:28px 20px;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">Hokkaido · Golf &amp; Onsen</div>
+  <h1 class="serif">토야 · 루스츠 · <em>니세코</em></h1>
+  <div class="sub">8월 25일 – 8월 30일 · 5박 6일 · 렌터카 여행</div>
+  <div class="hbar">
+    <div><small>Golf</small><b>3 라운드</b></div>
+    <div><small>Stay</small><b>윈저 · 자보린</b></div>
+    <div><small>Drive</small><b>약 5시간+</b></div>
+  </div>
+</header>
+
+<div class="navwrap">
+  <nav id="tabs">
+    <button class="tab active" data-day="1"><b>Day 1</b><span>8/25</span></button>
+    <button class="tab" data-day="2"><b>Day 2</b><span>8/26</span></button>
+    <button class="tab" data-day="3"><b>Day 3</b><span>8/27</span></button>
+    <button class="tab" data-day="4"><b>Day 4</b><span>8/28</span></button>
+    <button class="tab" data-day="5"><b>Day 5</b><span>8/29</span></button>
+    <button class="tab" data-day="6"><b>Day 6</b><span>8/30</span></button>
+  </nav>
+</div>
+
+<main>
+
+<!-- DAY 1 -->
+<section class="panel active" id="day1">
+  <div class="dayhead">
+    <div class="date">Day 1 · 8월 25일</div>
+    <h2 class="serif">신치토세 도착 → 윈저 호텔 토야</h2>
+    <div class="chips"><span class="chip move">이동</span><span class="chip food">데판야키 디너</span></div>
+  </div>
+  <div class="summary">
+    <div class="row"><div class="k">숙소</div><div class="v">더 윈저 호텔 토야 리조트 &amp; 스파<small>호수 전망 객실 · 北海道虻田郡洞爺湖町清水336</small></div></div>
+    <div class="row"><div class="k">핵심</div><div class="v">공항 도착 · 렌터카 픽업 · 호텔 체크인</div></div>
+    <div class="row"><div class="k">식사</div><div class="v">디너 — 호텔 내 데판야키</div></div>
+  </div>
+  <div class="sec">Schedule</div>
+  <div class="tl">
+    <div class="item">
+      <div class="time">Arrival</div>
+      <h3>신치토세 공항 도착 · 렌터카 픽업</h3>
+      <p>New Chitose Airport</p>
+      <div class="jp">新千歳空港</div>
+    </div>
+    <div class="route">
+      <div class="time">Drive</div>
+      <div class="leg">
+        <div class="pt a"><i>A</i><div><b>신치토세 공항</b><small>新千歳空港 · 北海道千歳市美々</small></div></div>
+        <div class="dots"></div>
+        <div class="pt b"><i>B</i><div><b>윈저 호텔 토야</b><small>北海道虻田郡洞爺湖町清水336</small></div></div>
+      </div>
+      <div class="eta"><span>약 1시간 45분–2시간</span><span class="d">약 115–130km</span></div>
+      <div class="btns">
+        <a class="btn primary" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&amp;origin=New%20Chitose%20Airport%2C%20%E5%8C%97%E6%B5%B7%E9%81%93%E5%8D%83%E6%AD%B3%E5%B8%82%E7%BE%8E%E3%80%85&amp;destination=The%20Windsor%20Hotel%20Toya%20Resort%20%26%20Spa%2C%20%E5%8C%97%E6%B5%B7%E9%81%93%E8%99%BB%E7%94%B0%E9%83%A1%E6%B4%9E%E7%88%BA%E6%B9%96%E7%94%BA%E6%B8%85%E6%B0%B4336&amp;travelmode=driving"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.7 11.3l-9-9a1 1 0 00-1.4 0l-9 9a1 1 0 000 1.4l9 9a1 1 0 001.4 0l9-9a1 1 0 000-1.4zM14 14.5V12h-4v3H8v-4a1 1 0 011-1h5V7.5l3.5 3.5-3.5 3.5z"/></svg>구글맵 길찾기</a>
+        <button class="btn ghost" data-copy="北海道虻田郡洞爺湖町清水336">주소 복사</button>
+      </div>
+    </div>
+    <div class="item">
+      <div class="time">Check-in</div>
+      <h3>윈저 호텔 토야 체크인</h3>
+      <p>도야호를 내려다보는 호수 전망 객실. 체크인 15:00</p>
+      <div class="jp">ザ・ウィンザーホテル洞爺リゾート&amp;スパ</div>
+    </div>
+    <div class="item">
+      <div class="time">Dinner</div>
+      <h3>호텔 내 데판야키 디너</h3>
+      <p>첫날 저녁은 호텔 안에서 철판 요리로 여유롭게.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DAY 2 -->
+<section class="panel" id="day2">
+  <div class="dayhead">
+    <div class="date">Day 2 · 8월 26일</div>
+    <h2 class="serif">골프 ① 그레이트 피크 오브 토야</h2>
+    <div class="chips"><span class="chip golf">골프 ①</span><span class="chip onsen">온천</span><span class="chip rest">호텔 휴식</span></div>
+  </div>
+  <div class="summary">
+    <div class="row"><div class="k">숙소</div><div class="v">더 윈저 호텔 토야 (연박)</div></div>
+    <div class="row"><div class="k">핵심</div><div class="v">윈저 자체 코스 라운드 → 오후 온천 · 호텔 시설과 전망</div></div>
+    <div class="row"><div class="k">식사</div><div class="v">호텔 조식 · 디너 호텔 내 레스토랑</div></div>
+  </div>
+  <div class="sec">Schedule</div>
+  <div class="tl">
+    <div class="item">
+      <div class="time">Morning · Golf ①</div>
+      <h3>윈저 그레이트 피크 오브 토야</h3>
+      <p>해발 약 625m 산 정상의 호텔 부지 내 코스. 운이 좋으면 운해 위 라운드. 호텔 지하주차장 → 내부 통로로 이동, 접수는 호텔 프런트가 아닌 골프장 스타트하우스.</p>
+      <div class="jp">ウィンザー・グレートピーク・オブ・トーヤ</div>
+      <a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Windsor%20Great%20Peaks%20of%20Toya%2C%20%E5%8C%97%E6%B5%B7%E9%81%93%E8%99%BB%E7%94%B0%E9%83%A1%E6%B4%9E%E7%88%BA%E6%B9%96%E7%94%BA%E6%B8%85%E6%B0%B4336">📍 골프장 위치</a>
+    </div>
+    <div class="item">
+      <div class="time">Afternoon</div>
+      <h3>온천 · 호텔 시설 즐기기</h3>
+      <p>라운드 후 호텔 온천에서 피로를 풀고, 도야호와 우치우라만 전망을 즐기며 휴식.</p>
+    </div>
+    <div class="item">
+      <div class="time">Evening</div>
+      <h3>호텔 디너</h3>
+      <p>호텔 내 레스토랑에서 자유롭게.</p>
+    </div>
+  </div>
+  <p class="note">호텔 내부 이동이라 렌터카 운전은 없습니다.</p>
+</section>
+
+<!-- DAY 3 -->
+<section class="panel" id="day3">
+  <div class="dayhead">
+    <div class="date">Day 3 · 8월 27일</div>
+    <h2 class="serif">루스츠 골프 → 자보린</h2>
+    <div class="chips"><span class="chip move">이동</span><span class="chip golf">골프 ②</span><span class="chip onsen">프라이빗 온천</span><span class="chip food">가이세키</span></div>
+  </div>
+  <div class="summary">
+    <div class="row"><div class="k">숙소</div><div class="v">자보린 (坐忘林)<small>北海道虻田郡倶知安町花園76-4</small></div></div>
+    <div class="row"><div class="k">핵심</div><div class="v">윈저 체크아웃 → 루스츠 리조트 골프 → 자보린 체크인</div></div>
+    <div class="row"><div class="k">식사</div><div class="v">호텔 조식 · 디너 자보린 가이세키</div></div>
+  </div>
+  <div class="sec">Schedule</div>
+  <div class="tl">
+    <div class="item">
+      <div class="time">Morning</div>
+      <h3>윈저 호텔 토야 체크아웃</h3>
+    </div>
+    <div class="route">
+      <div class="time">Drive 1/2</div>
+      <div class="leg">
+        <div class="pt a"><i>A</i><div><b>윈저 호텔 토야</b><small>北海道虻田郡洞爺湖町清水336</small></div></div>
+        <div class="dots"></div>
+        <div class="pt b"><i>B</i><div><b>루스츠 리조트 골프</b><small>北海道虻田郡留寿都村字泉川13</small></div></div>
+      </div>
+      <div class="eta"><span>약 35분</span><span class="d">약 30km</span></div>
+      <div class="btns">
+        <a class="btn primary" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&amp;origin=The%20Windsor%20Hotel%20Toya%20Resort%20%26%20Spa%2C%20%E5%8C%97%E6%B5%B7%E9%81%93%E8%99%BB%E7%94%B0%E9%83%A1%E6%B4%9E%E7%88%BA%E6%B9%96%E7%94%BA%E6%B8%85%E6%B0%B4336&amp;destination=Rusutsu%20Resort%20Golf%2072%2C%20%E5%8C%97%E6%B5%B7%E9%81%93%E8%99%BB%E7%94%B0%E9%83%A1%E7%95%99%E5%AF%BF%E9%83%BD%E6%9D%91%E5%AD%97%E6%B3%89%E5%B7%9D13&amp;travelmode=driving"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.7 11.3l-9-9a1 1 0 00-1.4 0l-9 9a1 1 0 000 1.4l9 9a1 1 0 001.4 0l9-9a1 1 0 000-1.4zM14 14.5V12h-4v3H8v-4a1 1 0 011-1h5V7.5l3.5 3.5-3.5 3.5z"/></svg>구글맵 길찾기</a>
+        <button class="btn ghost" data-copy="北海道虻田郡留寿都村字泉川13">주소 복사</button>
+      </div>
+    </div>
+    <div class="item">
+      <div class="time">Golf ②</div>
+      <h3>루스츠 리조트 골프</h3>
+      <p>요테이산을 바라보는 72홀 골프 리조트.</p>
+      <div class="jp">ルスツリゾートゴルフ72</div>
+    </div>
+    <div class="route">
+      <div class="time">Drive 2/2</div>
+      <div class="leg">
+        <div class="pt a"><i>A</i><div><b>루스츠 리조트 골프</b><small>北海道虻田郡留寿都村字泉川13</small></div></div>
+        <div class="dots"></div>
+        <div class="pt b"><i>B</i><div><b>자보린</b><small>北海道虻田郡倶知安町花園76-4</small></div></div>
+      </div>
+      <div class="eta"><span>약 45분</span><span class="d">약 38km</span></div>
+      <div class="btns">
+        <a class="btn primary" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&amp;origin=Rusutsu%20Resort%20Golf%2072%2C%20%E5%8C%97%E6%B5%B7%E9%81%93%E8%99%BB%E7%94%B0%E9%83%A1%E7%95%99%E5%AF%BF%E9%83%BD%E6%9D%91%E5%AD%97%E6%B3%89%E5%B7%9D13&amp;destination=Zaborin%2C%20%E5%8C%97%E6%B5%B7%E9%81%93%E8%99%BB%E7%94%B0%E9%83%A1%E5%80%B6%E7%9F%A5%E5%AE%89%E7%94%BA%E8%8A%B1%E5%9C%9276-4&amp;travelmode=driving"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.7 11.3l-9-9a1 1 0 00-1.4 0l-9 9a1 1 0 000 1.4l9 9a1 1 0 001.4 0l9-9a1 1 0 000-1.4zM14 14.5V12h-4v3H8v-4a1 1 0 011-1h5V7.5l3.5 3.5-3.5 3.5z"/></svg>구글맵 길찾기</a>
+        <button class="btn ghost" data-copy="北海道虻田郡倶知安町花園76-4">주소 복사</button>
+      </div>
+    </div>
+    <div class="item">
+      <div class="time">Check-in</div>
+      <h3>자보린 체크인 · 첫 프라이빗 온천</h3>
+      <p>15개 독립 객실마다 딸린 원천 내탕 · 노천탕. 체크인 14:00</p>
+      <div class="jp">坐忘林 Zaborin</div>
+    </div>
+    <div class="item">
+      <div class="time">Dinner</div>
+      <h3>가이세키 디너</h3>
+      <p>홋카이도 제철 식재료로 차린 자보린의 가이세키.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DAY 4 -->
+<section class="panel" id="day4">
+  <div class="dayhead">
+    <div class="date">Day 4 · 8월 28일</div>
+    <h2 class="serif">골프 ③ 하나조노 골프</h2>
+    <div class="chips"><span class="chip golf">골프 ③</span><span class="chip move">이동</span><span class="chip onsen">온천</span></div>
+  </div>
+  <div class="summary">
+    <div class="row"><div class="k">숙소</div><div class="v">자보린 (연박)</div></div>
+    <div class="row"><div class="k">핵심</div><div class="v">요테이산 전망 라운드 → 료칸 복귀 · 온천</div></div>
+    <div class="row"><div class="k">식사</div><div class="v">료칸 조식 · 디너 자보린 가이세키</div></div>
+  </div>
+  <div class="sec">Schedule</div>
+  <div class="tl">
+    <div class="route">
+      <div class="time">Drive</div>
+      <div class="leg">
+        <div class="pt a"><i>A</i><div><b>자보린</b><small>北海道虻田郡倶知安町花園76-4</small></div></div>
+        <div class="dots"></div>
+        <div class="pt b"><i>B</i><div><b>하나조노 골프</b><small>北海道虻田郡倶知安町花園1</small></div></div>
+      </div>
+      <div class="eta"><span>약 7–10분</span><span class="d">약 4km</span></div>
+      <div class="btns">
+        <a class="btn primary" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&amp;origin=Zaborin%2C%20%E5%8C%97%E6%B5%B7%E9%81%93%E8%99%BB%E7%94%B0%E9%83%A1%E5%80%B6%E7%9F%A5%E5%AE%89%E7%94%BA%E8%8A%B1%E5%9C%9276-4&amp;destination=HANAZONO%20GOLF%2C%20%E5%8C%97%E6%B5%B7%E9%81%93%E8%99%BB%E7%94%B0%E9%83%A1%E5%80%B6%E7%9F%A5%E5%AE%89%E7%94%BA%E8%8A%B1%E5%9C%921&amp;travelmode=driving"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.7 11.3l-9-9a1 1 0 00-1.4 0l-9 9a1 1 0 000 1.4l9 9a1 1 0 001.4 0l9-9a1 1 0 000-1.4zM14 14.5V12h-4v3H8v-4a1 1 0 011-1h5V7.5l3.5 3.5-3.5 3.5z"/></svg>구글맵 길찾기</a>
+        <button class="btn ghost" data-copy="北海道虻田郡倶知安町花園1">주소 복사</button>
+      </div>
+    </div>
+    <div class="item">
+      <div class="time">Golf ③</div>
+      <h3>하나조노 골프 (니세코)</h3>
+      <p>요테이산과 니세코 연봉에 둘러싸인 18홀. 아웃은 숲길, 인은 구릉 코스.</p>
+      <div class="jp">HANAZONO GOLF</div>
+    </div>
+    <div class="item">
+      <div class="time">Afternoon</div>
+      <h3>료칸 복귀 · 온천</h3>
+      <p>객실 노천탕에서 라운드 후 휴식.</p>
+    </div>
+    <div class="item">
+      <div class="time">Dinner</div>
+      <h3>자보린 디너</h3>
+    </div>
+  </div>
+</section>
+
+<!-- DAY 5 -->
+<section class="panel" id="day5">
+  <div class="dayhead">
+    <div class="date">Day 5 · 8월 29일</div>
+    <h2 class="serif">부부 휴식의 날</h2>
+    <div class="chips"><span class="chip rest">골프 없음</span><span class="chip onsen">온천</span><span class="chip food">다도 · 미식</span></div>
+  </div>
+  <div class="summary">
+    <div class="row"><div class="k">숙소</div><div class="v">자보린 (연박)</div></div>
+    <div class="row"><div class="k">핵심</div><div class="v">료칸에서 온천 · 다도 · 미식<small>선택: 니세코 시내 또는 요이치 위스키 증류소 가벼운 외출</small></div></div>
+    <div class="row"><div class="k">식사</div><div class="v">료칸 조식 · 디너 자보린 가이세키</div></div>
+  </div>
+  <div class="sec">Schedule</div>
+  <div class="tl">
+    <div class="item">
+      <div class="time">All day</div>
+      <h3>료칸에서 온천 · 다도 · 미식</h3>
+      <p>골프 없이 둘만의 느긋한 하루.</p>
+    </div>
+    <div class="item opt">
+      <div class="time">Option A</div>
+      <h3>니세코 시내 산책<span class="opt-tag">선택</span></h3>
+      <p>카페 · 숍 둘러보기.</p>
+    </div>
+    <div class="route">
+      <div class="time">Option B · Drive<span class="opt-tag">선택</span></div>
+      <div class="leg">
+        <div class="pt a"><i>A</i><div><b>자보린</b><small>北海道虻田郡倶知安町花園76-4</small></div></div>
+        <div class="dots"></div>
+        <div class="pt b"><i>B</i><div><b>닛카 위스키 요이치 증류소</b><small>北海道余市郡余市町黒川町7-6</small></div></div>
+      </div>
+      <div class="eta"><span>약 50분</span><span class="d">약 40km</span></div>
+      <div class="btns">
+        <a class="btn primary" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&amp;origin=Zaborin%2C%20%E5%8C%97%E6%B5%B7%E9%81%93%E8%99%BB%E7%94%B0%E9%83%A1%E5%80%B6%E7%9F%A5%E5%AE%89%E7%94%BA%E8%8A%B1%E5%9C%9276-4&amp;destination=Nikka%20Whisky%20Yoichi%20Distillery%2C%20%E5%8C%97%E6%B5%B7%E9%81%93%E4%BD%99%E5%B8%82%E9%83%A1%E4%BD%99%E5%B8%82%E7%94%BA%E9%BB%92%E5%B7%9D%E7%94%BA7-6&amp;travelmode=driving"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.7 11.3l-9-9a1 1 0 00-1.4 0l-9 9a1 1 0 000 1.4l9 9a1 1 0 001.4 0l9-9a1 1 0 000-1.4zM14 14.5V12h-4v3H8v-4a1 1 0 011-1h5V7.5l3.5 3.5-3.5 3.5z"/></svg>구글맵 길찾기</a>
+        <button class="btn ghost" data-copy="北海道余市郡余市町黒川町7-6">주소 복사</button>
+      </div>
+      <p class="note" style="padding:10px 0 0">운영 09:15–16:15 · 가이드 투어는 사전 예약제. 시음은 운전자 제외.</p>
+    </div>
+    <div class="item">
+      <div class="time">Dinner</div>
+      <h3>자보린 디너</h3>
+    </div>
+  </div>
+</section>
+
+<!-- DAY 6 -->
+<section class="panel" id="day6">
+  <div class="dayhead">
+    <div class="date">Day 6 · 8월 30일</div>
+    <h2 class="serif">자보린 → 신치토세 공항</h2>
+    <div class="chips"><span class="chip food">료칸 조식</span><span class="chip move">이동</span></div>
+  </div>
+  <div class="summary">
+    <div class="row"><div class="k">숙소</div><div class="v">— (귀국)</div></div>
+    <div class="row"><div class="k">핵심</div><div class="v">조식 후 체크아웃 → 공항 이동 · 렌터카 반납</div></div>
+    <div class="row"><div class="k">식사</div><div class="v">자보린 조식</div></div>
+  </div>
+  <div class="sec">Schedule</div>
+  <div class="tl">
+    <div class="item">
+      <div class="time">Morning</div>
+      <h3>자보린 조식 · 체크아웃</h3>
+      <p>체크아웃 11:00</p>
+    </div>
+    <div class="route">
+      <div class="time">Drive</div>
+      <div class="leg">
+        <div class="pt a"><i>A</i><div><b>자보린</b><small>北海道虻田郡倶知安町花園76-4</small></div></div>
+        <div class="dots"></div>
+        <div class="pt b"><i>B</i><div><b>신치토세 공항</b><small>新千歳空港 · 北海道千歳市美々</small></div></div>
+      </div>
+      <div class="eta"><span>약 2시간</span><span class="d">약 114km</span></div>
+      <div class="btns">
+        <a class="btn primary" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&amp;origin=Zaborin%2C%20%E5%8C%97%E6%B5%B7%E9%81%93%E8%99%BB%E7%94%B0%E9%83%A1%E5%80%B6%E7%9F%A5%E5%AE%89%E7%94%BA%E8%8A%B1%E5%9C%9276-4&amp;destination=New%20Chitose%20Airport%2C%20%E5%8C%97%E6%B5%B7%E9%81%93%E5%8D%83%E6%AD%B3%E5%B8%82%E7%BE%8E%E3%80%85&amp;travelmode=driving"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.7 11.3l-9-9a1 1 0 00-1.4 0l-9 9a1 1 0 000 1.4l9 9a1 1 0 001.4 0l9-9a1 1 0 000-1.4zM14 14.5V12h-4v3H8v-4a1 1 0 011-1h5V7.5l3.5 3.5-3.5 3.5z"/></svg>구글맵 길찾기</a>
+        <button class="btn ghost" data-copy="新千歳空港">주소 복사</button>
+      </div>
+    </div>
+    <div class="item">
+      <div class="time">Departure</div>
+      <h3>렌터카 반납 · 출국</h3>
+      <p>반납 시간을 고려해 여유 있게 출발.</p>
+    </div>
+  </div>
+</section>
+
+<p class="note">소요시간은 구글맵 기준 예상치이며, 출발 시 구글맵에서 실시간으로 확인하세요.</p>
+</main>
+
+<footer><b>Hokkaido · Golf &amp; Onsen</b></footer>
+</div>
+<div id="toast"></div>
+<script>
+  const tabs=document.querySelectorAll('.tab');
+  function show(d){
+    tabs.forEach(t=>t.classList.toggle('active',t.dataset.day===String(d)));
+    document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('active',p.id==='day'+d));
+    try{localStorage.setItem('hk_day',d);}catch(e){}
+    const nav=document.querySelector('.navwrap');
+    if(window.scrollY>nav.offsetTop) window.scrollTo({top:nav.offsetTop,behavior:'smooth'});
+  }
+  tabs.forEach(t=>t.addEventListener('click',()=>show(t.dataset.day)));
+  (function(){let d=1;const h=location.hash.match(/day(\d)/);if(h)d=+h[1];else{try{d=+localStorage.getItem('hk_day')||1;}catch(e){}} if(d>=1&&d<=6) show(d);})();
+  let tt;
+  function toast(m){const el=document.getElementById('toast');el.textContent=m;el.classList.add('show');clearTimeout(tt);tt=setTimeout(()=>el.classList.remove('show'),1600);}
+  document.querySelectorAll('[data-copy]').forEach(b=>b.addEventListener('click',()=>{
+    const s=b.dataset.copy;
+    if(navigator.clipboard) navigator.clipboard.writeText(s).then(()=>toast('복사됨 · '+s)).catch(()=>toast(s)); else toast(s);
+  }));
+</script>
+</body>
+</html>
